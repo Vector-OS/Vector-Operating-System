@@ -21,7 +21,7 @@ Vector Operating System (Vector OS) is a cutting-edge, lightweight operating sys
 
 ## 📂 Project Structure
 ```
-Vector-Opreating-System/
+Vector-Opreating-System/linux-6.14
 │── arch/          # Architecture-specific code (x86, ARM, RISC-V, etc.)
 │── block/         # Block layer (I/O scheduling, disk management)
 │── certs/         # Security certificates for kernel signing
@@ -49,7 +49,7 @@ Vector-Opreating-System/
 ## 📥 Installation Guide
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/Zainulabdeenoffical/Vector-Opreating-System.git
+https://github.com/Vector-OS/Vector-Operating-System
 cd Vector-Opreating-System
 ```
 ### 2. Install Dependencies (if required)
@@ -89,7 +89,7 @@ We welcome contributions! To get started:
 - Test your changes before submitting a PR.
 - Reference existing issues or create new ones before making changes.
 
-For detailed guidelines, check our [documentation](https://github.com/Zainulabdeenoffical/Vector-Opreating-System/tree/main/Documentation) Folder
+For detailed guidelines, check our [documentation](https://github.com/Vector-OS/Vector-Operating-System/tree/main/linux-6.14/Documentation) Folder
 
 ## 📜 License
 Vector OS is licensed under the [MIT License](LICENSE).
