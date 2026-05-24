@@ -36,6 +36,10 @@ if [ ! -d config ]; then
   fi
 fi
 
+if [ -n "${AUTO_CONFIG_DISABLED}" ] && [ -x "${AUTO_CONFIG_DISABLED}" ]; then
+  sh "${AUTO_CONFIG_DISABLED}"
+fi
+
 chmod +x ./config/hooks/live/*.hook.chroot 2>/dev/null || true
 chmod +x ./config/includes.chroot/usr/local/bin/vectos-ai 2>/dev/null || true
 chmod +x ./config/includes.chroot/usr/local/bin/vectos-welcome 2>/dev/null || true
