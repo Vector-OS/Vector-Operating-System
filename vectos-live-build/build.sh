@@ -18,8 +18,17 @@ if grep -qi microsoft /proc/version 2>/dev/null && pwd -P | grep -Eq '^/mnt/[a-z
   exit 1
 fi
 
+AUTO_CONFIG_DISABLED=""
+if [ -x ./auto/config ]; then
+  AUTO_CONFIG_DISABLED="./auto/config.disabled"
+  mv ./auto/config "${AUTO_CONFIG_DISABLED}"
+  trap 'mv -f "${AUTO_CONFIG_DISABLED}" ./auto/config 2>/dev/null || true' EXIT
+fi
+
 if [ ! -d config ]; then
-  if [ -x ./auto/config ]; then
+  if [ -n "${AUTO_CONFIG_DISABLED}" ] && [ -x "${AUTO_CONFIG_DISABLED}" ]; then
+    sh "${AUTO_CONFIG_DISABLED}"
+  elif [ -x ./auto/config ]; then
     ./auto/config
   else
     echo "Missing config/. Run this from the vectos-live-build workspace."
@@ -27,7 +36,6 @@ if [ ! -d config ]; then
   fi
 fi
 
-chmod +x ./auto/config 2>/dev/null || true
 chmod +x ./config/hooks/live/*.hook.chroot 2>/dev/null || true
 chmod +x ./config/includes.chroot/usr/local/bin/vectos-ai 2>/dev/null || true
 chmod +x ./config/includes.chroot/usr/local/bin/vectos-welcome 2>/dev/null || true
@@ -40,15 +48,8 @@ if [ -f "../public/image/logo/Vector OS new Logo.jpeg" ]; then
   cp "../public/image/logo/Vector OS new Logo.jpeg" ./config/includes.chroot/usr/share/plymouth/themes/vectos/vectos-logo.jpeg
 fi
 
-# Start from a clean live-build state to avoid stale config / recursive auto-config behavior.
+# Start from a clean live-build state after disabling auto/config so lb does not recurse.
 lb clean --purge
-
-AUTO_CONFIG_DISABLED=""
-if [ -x ./auto/config ]; then
-  AUTO_CONFIG_DISABLED="./auto/config.disabled"
-  mv ./auto/config "${AUTO_CONFIG_DISABLED}"
-  trap 'mv -f "${AUTO_CONFIG_DISABLED}" ./auto/config 2>/dev/null || true' EXIT
-fi
 
 lb build
 
