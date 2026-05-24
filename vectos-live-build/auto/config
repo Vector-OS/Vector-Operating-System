@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+
+lb config \
+  --architectures amd64 \
+  --binary-images iso-hybrid \
+  --distribution bookworm \
+  --archive-areas "main contrib non-free non-free-firmware" \
+  --debian-installer live \
+  --bootappend-live "boot=live components hostname=vectos username=vectos" \
+  --iso-volume "VECTOS_OS" \
+  --iso-application "VectOS OS" \
+  --iso-publisher "VectOS" \
+  --mirror-bootstrap http://ftp.us.debian.org/debian \
+  --mirror-binary http://ftp.us.debian.org/debian \
+  --mirror-chroot-security http://security.debian.org/debian-security

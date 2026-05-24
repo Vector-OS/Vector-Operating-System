@@ -1,0 +1,25 @@
+git
+nodejs
+npm
+curl
+wget
+python3
+nmap
+wireshark
+build-essential
+sudo
+lutris
+firefox-esr
+gparted
+network-manager
+openssh-server
+flatpak
+snapd
+lutris
+steam-installer
+ca-certificates
+vim-tiny
+zenity
+btop
+# code requires an external repository on Debian; use code-oss for an offline-safe build
+code-oss

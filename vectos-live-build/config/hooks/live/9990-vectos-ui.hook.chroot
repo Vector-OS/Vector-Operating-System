@@ -1,0 +1,28 @@
+#!/bin/sh
+set -eux
+
+# This hook runs inside the build chroot during lb build.
+# It ensures plymouth/grub theme files and executables are placed correctly.
+
+mkdir -p /usr/share/plymouth/themes/vectos
+mkdir -p /boot/grub/themes/vectos || true
+
+# If vectos-ui assets were copied into the includes tree, they appear under /usr/share/vectos-ui
+if [ -d /usr/share/vectos-ui/plymouth ]; then
+  cp -a /usr/share/vectos-ui/plymouth/* /usr/share/plymouth/themes/vectos/ || true
+fi
+
+if [ -d /usr/share/vectos-ui/grub ]; then
+  mkdir -p /boot/grub/themes/vectos
+  cp -a /usr/share/vectos-ui/grub/* /boot/grub/themes/vectos/ || true
+fi
+
+# Ensure executables are executable
+if [ -f /usr/bin/vectos-control-center ]; then
+  chmod +x /usr/bin/vectos-control-center || true
+fi
+if [ -f /usr/bin/vectos-ai ]; then
+  chmod +x /usr/bin/vectos-ai || true
+fi
+
+exit 0

@@ -1,0 +1,7 @@
+NAME="VectOS OS"
+PRETTY_NAME="VectOS OS"
+ID=vectos
+ID_LIKE=debian
+HOME_URL="https://github.com/Vector-OS/Vector-Operating-System"
+SUPPORT_URL="https://github.com/Vector-OS/Vector-Operating-System/issues"
+BUG_REPORT_URL="https://github.com/Vector-OS/Vector-Operating-System/issues"

@@ -1,0 +1,15 @@
+xfce4
+xfce4-goodies
+lightdm
+lightdm-gtk-greeter
+xorg
+xserver-xorg-video-all
+network-manager-gnome
+papirus-icon-theme
+plymouth
+plymouth-themes
+fonts-dejavu
+fonts-noto-color-emoji
+mousepad
+thunar-archive-plugin
+xfce4-whiskermenu-plugin

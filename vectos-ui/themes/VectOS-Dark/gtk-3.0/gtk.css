@@ -1,0 +1,31 @@
+/* VectOS Dark GTK3 theme (minimal stub) */
+* {
+  font-family: "Roboto", "Fira Code", sans-serif;
+}
+
+window {
+  background-color: #0b0f1a;
+  color: #00ffe1;
+}
+
+button {
+  background-color: #111a2e;
+  border-radius: 10px;
+  color: #00ffe1;
+  border: 1px solid rgba(0,255,225,0.08);
+  padding: 6px 12px;
+}
+
+button:hover {
+  background-color: #00ffe1;
+  color: #000;
+}
+
+headerbar {
+  background-color: rgba(10, 15, 28, 0.85);
+}
+
+entry, textview {
+  background-color: #111a2e;
+  color: #00ffe1;
+}

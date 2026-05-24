@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=VectOS Welcome
+Exec=vectos-welcome
+OnlyShowIn=XFCE;
+X-GNOME-Autostart-enabled=true

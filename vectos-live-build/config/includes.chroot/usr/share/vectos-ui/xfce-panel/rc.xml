@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Minimal XFCE panel rc.xml to create a full-width top bar (macOS style) -->
+<channel version="1.0">
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+  </property>
+
+  <property name="panel-1" type="empty">
+    <property name="position" value="p=6;x=0;y=0"/>
+    <property name="length" value="100%"/>
+    <property name="size" value="36"/>
+    <property name="background-style" value="transparent"/>
+    <!-- More XFCE panel configuration can be appended here -->
+  </property>
+</channel>

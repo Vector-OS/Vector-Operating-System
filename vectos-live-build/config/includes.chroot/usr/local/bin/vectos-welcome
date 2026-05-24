@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+MARKER="$HOME/.config/vectos/welcome.done"
+mkdir -p "$(dirname "$MARKER")"
+
+if [ -f "$MARKER" ]; then
+  exit 0
+fi
+
+if command -v zenity >/dev/null 2>&1; then
+  zenity --question --title="Welcome to VectOS OS" --text="Welcome to VectOS OS. Would you like to open system tools now?"
+fi
+
+touch "$MARKER"

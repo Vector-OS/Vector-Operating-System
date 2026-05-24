@@ -1,0 +1,3 @@
+vectos-dark.jpg
+vectos-neon-grid.png
+vectos-logo-glow.png

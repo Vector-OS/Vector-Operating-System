@@ -1,0 +1,6 @@
+[Plymouth Theme]
+Name=VectOS
+Description=VectOS boot splash theme
+ModuleName=script
+ImageDir=/usr/share/plymouth/themes/vectos
+ScriptFile=/usr/share/plymouth/themes/vectos/vectos.script

@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+
+install -d /usr/share/backgrounds/vectos
+install -d /etc/calamares

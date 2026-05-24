@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=VectOS Control Center
+Comment=Open the VectOS Control Center
+Exec=/usr/bin/vectos-control-center
+Terminal=false
+Type=Application
+Categories=Utility;Settings;
+Icon=vectos-control-center

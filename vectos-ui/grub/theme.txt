@@ -1,0 +1,17 @@
+# VectOS GRUB theme (minimal)
+title-text: "VectOS OS"
+desktop-image: "background.png"
+
+terminal-box {
+  left = 10%
+  top = 10%
+  width = 80%
+  height = 10%
+}
+
+boot_menu {
+  left = 30%
+  width = 40%
+  top = 40%
+  height = 40%
+}

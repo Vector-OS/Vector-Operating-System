@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+
+if command -v zenity >/dev/null 2>&1; then
+  zenity --info --title="VectOS AI" --text="VectOS AI is ready. Connect your model provider to enable intelligent suggestions."
+else
+  echo "VectOS AI is ready. Connect your model provider to enable intelligent suggestions."
+fi

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=VectOS UI Loader
+Exec=sh -c "xfce4-panel & plank & /usr/bin/vectos-ai &"
+X-GNOME-Autostart-enabled=true
+NoDisplay=false

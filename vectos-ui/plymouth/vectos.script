@@ -1,0 +1,22 @@
+// Simple Plymouth script for VectOS theme (script module)
+Window.SetBackgroundTopColor (0.0, 0.0, 0.0);
+Window.SetBackgroundBottomColor (0.0, 0.0, 0.0);
+
+logo = Image("vectos-logo-glow.png");
+sprite = Sprite(logo);
+
+function refresh_callback()
+{
+    sprite.SetX(Window.GetWidth()/2 - logo.GetWidth()/2);
+    sprite.SetY(Window.GetHeight()/2 - logo.GetHeight()/2 - 40);
+}
+
+function animation_callback(progress)
+{
+    // simple breathing glow effect using progress
+    splash = Math.abs(Math.sin(progress*3.1415));
+    sprite.SetOpacity(0.6 + 0.4 * splash);
+}
+
+Plymouth.SetUpdateStatusFunction(refresh_callback);
+Plymouth.SetSplashProgressFunction(animation_callback);

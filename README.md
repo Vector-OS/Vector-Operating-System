@@ -52,22 +52,12 @@ Vector-Opreating-System/linux-6.14
 https://github.com/Vector-OS/Vector-Operating-System
 cd Vector-Opreating-System
 ```
-### 2. Install Dependencies (if required)
-```sh
-sudo apt-get update && sudo apt-get install build-essential qemu
-```
-### 3. Build the OS
-```sh
-make build
-```
-### 4. Run the OS in an Emulator
-```sh
-make run
-```
-### 5. Burn to USB (Optional)
-```sh
-dd if=vectoros.iso of=/dev/sdX bs=4M status=progress && sync
-```
+### 2. Read the build checklist
+This repository currently contains the Linux kernel source tree used by Vector OS.
+The full Debian live-image and installer workflow is documented in [BUILDING-VECTOS.md](BUILDING-VECTOS.md).
+
+### 3. Kernel build reference
+If you are working on the kernel itself, use the standard Linux build flow from [linux-6.14/README](linux-6.14/README).
 
 ## 📌 Usage
 - **Booting:** Start Vector OS using a virtual machine (QEMU, VirtualBox) or directly from a bootable USB drive.

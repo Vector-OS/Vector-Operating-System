@@ -1,0 +1,10 @@
+[PlankDockPreferences]
+Alignment=2
+HideMode=2
+IconSize=48
+Theme=Transparent
+ZoomEnabled=true
+ZoomPercent=120
+
+# Pinned apps (use desktop file names) - example only
+# Add desktop file names (without path) to the Pin entries in ~/.config/plank/dock1/launchers/
