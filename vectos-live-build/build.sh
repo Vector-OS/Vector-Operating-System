@@ -25,21 +25,6 @@ if [ -x ./auto/config ]; then
   trap 'mv -f "${AUTO_CONFIG_DISABLED}" ./auto/config 2>/dev/null || true' EXIT
 fi
 
-if [ ! -d config ]; then
-  if [ -n "${AUTO_CONFIG_DISABLED}" ] && [ -x "${AUTO_CONFIG_DISABLED}" ]; then
-    sh "${AUTO_CONFIG_DISABLED}"
-  elif [ -x ./auto/config ]; then
-    ./auto/config
-  else
-    echo "Missing config/. Run this from the vectos-live-build workspace."
-    exit 1
-  fi
-fi
-
-if [ -n "${AUTO_CONFIG_DISABLED}" ] && [ -x "${AUTO_CONFIG_DISABLED}" ]; then
-  sh "${AUTO_CONFIG_DISABLED}"
-fi
-
 chmod +x ./config/hooks/live/*.hook.chroot 2>/dev/null || true
 chmod +x ./config/includes.chroot/usr/local/bin/vectos-ai 2>/dev/null || true
 chmod +x ./config/includes.chroot/usr/local/bin/vectos-welcome 2>/dev/null || true
@@ -52,8 +37,17 @@ if [ -f "../public/image/logo/Vector OS new Logo.jpeg" ]; then
   cp "../public/image/logo/Vector OS new Logo.jpeg" ./config/includes.chroot/usr/share/plymouth/themes/vectos/vectos-logo.jpeg
 fi
 
-# Start from a clean live-build state after disabling auto/config so lb does not recurse.
+# Start from a clean live-build state before generating the final config.
 lb clean --purge
+
+if [ -n "${AUTO_CONFIG_DISABLED}" ] && [ -x "${AUTO_CONFIG_DISABLED}" ]; then
+  sh "${AUTO_CONFIG_DISABLED}"
+elif [ -x ./auto/config ]; then
+  ./auto/config
+else
+  echo "Missing config/. Run this from the vectos-live-build workspace."
+  exit 1
+fi
 
 lb build
 
