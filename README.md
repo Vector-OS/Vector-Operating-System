@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Vector-OS/Vector-Operating-System/blob/main/public/image/logo/Vector%20OS%20new%20Logo.jpeg" alt="OS Logo" width="150" height="150"/>
+  <img src="https://github.com/Vector-OS/Vector-Operating-System/blob/main/public/image/logo/vectos-logo.jpeg" alt="OS Logo" width="150" height="150"/>
 </p>
 
 # Vector Operating System
